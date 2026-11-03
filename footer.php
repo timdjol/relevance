@@ -98,7 +98,7 @@
 		<div class="text">Связаться</div>
 		<div class="soc-list">
 			<ul>
-				<li><a rel="nofollow" href="tel:<?php the_field('phone', 'option'); ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/phonew.svg" alt=""></a></li>
+				<li><a rel="nofollow" href="tel:<?php the_field('phone3', 'option'); ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/phonew.svg" alt=""></a></li>
 				<li><a rel="nofollow" href="http://wa.me/<?php the_field('whatsapp', 'option'); ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/whatsapp.svg" alt=""></a></li>
 				<li class="d-xl-inline-block d-lg-inline-block d-none"><a rel="nofollow" href="https://web.telegram.org/#/im?p=<?php the_field('telegram', 'option'); ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/telegram.svg" alt=""></a></li>
 				<li class="d-xl-none d-lg-none d-inline-block"><a rel="nofollow" href="tg://resolve?domain=<?php the_field('telegram', 'option'); ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/telegram.svg" alt=""></a></li>
