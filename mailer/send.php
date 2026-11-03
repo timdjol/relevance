@@ -11,19 +11,17 @@ header("Content-Type: text/html; charset=utf-8");
 $mail = new PHPMailer;
 $mail->CharSet = 'UTF-8';
 
-$mail->isSMTP(); 
-$mail->Host = 'smtp.beget.com';  
-$mail->SMTPAuth = true;                      
-$mail->Username = 'relevance@timdjol.com'; // Ваш логин в Яндексе. Именно логин, без @yandex.ru
-$mail->Password = ''; // Ваш пароль
-$mail->SMTPSecure = 'ssl';                            
-$mail->Port = 465;
-$mail->setFrom('relevance@timdjol.com'); // Ваш Email
-$mail->addAddress('relevance@timdjol.com'); // Email получателя
+$mail->isSMTP();
+$mail->Host = '127.0.0.1';
+$mail->SMTPAuth = false;
+$mail->SMTPAutoTLS = false;
+$mail->Port = 25;
+$mail->setFrom('info@relevance.kg', 'Relevance');
+$mail->addAddress('relevanceconsult@gmail.com');
 
 
 // Прикрепление файлов
-  for ($ct = 0; $ct < count($_FILES['userfile']['tmp_name']); $ct++) {
+  if (!empty($_FILES['userfile']['tmp_name']) && is_array($_FILES['userfile']['tmp_name'])) for ($ct = 0; $ct < count($_FILES['userfile']['tmp_name']); $ct++) {
         $uploadfile = tempnam(sys_get_temp_dir(), sha1($_FILES['userfile']['name'][$ct]));
         $filename = $_FILES['userfile']['name'][$ct];
         if (move_uploaded_file($_FILES['userfile']['tmp_name'][$ct], $uploadfile)) {
@@ -33,7 +31,7 @@ $mail->addAddress('relevance@timdjol.com'); // Email получателя
         }
     }
     
-    for ($ct = 0; $ct < count($_FILES['snils']['tmp_name']); $ct++) {
+    if (!empty($_FILES['snils']['tmp_name']) && is_array($_FILES['snils']['tmp_name'])) for ($ct = 0; $ct < count($_FILES['snils']['tmp_name']); $ct++) {
         $uploadfile = tempnam(sys_get_temp_dir(), sha1($_FILES['snils']['name'][$ct]));
         $filename = $_FILES['snils']['name'][$ct];
         if (move_uploaded_file($_FILES['snils']['tmp_name'][$ct], $uploadfile)) {
@@ -43,7 +41,7 @@ $mail->addAddress('relevance@timdjol.com'); // Email получателя
         }
     } 
     
-    for ($ct = 0; $ct < count($_FILES['income']['tmp_name']); $ct++) {
+    if (!empty($_FILES['income']['tmp_name']) && is_array($_FILES['income']['tmp_name'])) for ($ct = 0; $ct < count($_FILES['income']['tmp_name']); $ct++) {
         $uploadfile = tempnam(sys_get_temp_dir(), sha1($_FILES['income']['name'][$ct]));
         $filename = $_FILES['income']['name'][$ct];
         if (move_uploaded_file($_FILES['income']['tmp_name'][$ct], $uploadfile)) {
@@ -67,8 +65,9 @@ $mail->Body    = "<table style='width: 100%;'>
 
 // Результат
 if(!$mail->send()) {
+    http_response_code(500);
+    error_log('relevance mailer send.php: ' . $mail->ErrorInfo);
     echo 'Письмо не отправлено';
-    echo 'Ошибка: ' . $mail->ErrorInfo;
 } else { 
     echo '<h1>Спасибо ваша заявка принята!</h1>';
     echo '<p>Мы с Вами скоро свяжемся</p>';
