@@ -132,7 +132,7 @@ get_template_part( 'head' ); ?>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-6">
 				<a href="<?php echo get_home_url(); ?>/category/baza/">
 				    <div class="homeblog-item" data-aos="zoom-in" data-aos-duration="2000">
     					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/blog1.svg" alt="">
@@ -143,7 +143,7 @@ get_template_part( 'head' ); ?>
     				</div>
 				</a>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-6">
 				<a href="<?php echo get_home_url(); ?>/forum-buhgalterov/">
 				    <div class="homeblog-item" data-aos="zoom-in" data-aos-duration="2000">
     					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/blog2.svg" alt="">
@@ -153,15 +153,6 @@ get_template_part( 'head' ); ?>
     					</div>
     				</div>
 				</a>
-			</div>
-			<div class="col-md-4">
-				<div class="homeblog-item" data-aos="zoom-in" data-aos-duration="2000">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/blog3.svg" alt="">
-					<h3>Вопросы & ответы</h3>
-					<div class="btn-wrap">
-					    <a href="#" class="more">Подробнее</a>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
@@ -406,46 +397,19 @@ get_template_part( 'head' ); ?>
 			</div>
 			<div class="col-lg-7 col-md-12">
 				<div class="map" data-aos="fade-right" data-aos-duration="2000">
-				    <script src="https://maps.api.2gis.ru/2.0/loader.js"></script>
-				    <div id="map" style="width: 100%; height: 500px;"></div>
-                    <script>
-                        DG.then(function() {
-                			var map = DG.map('map', {
-                				center: [42.878688, 74.578238],
-                				zoom: 16
-                			});
-                
-                			DG.marker([42.878688, 74.578238],{scrollWheelZoom: false})
-                			.addTo(map)
-                			.bindLabel('RELEVANCE Consulting company', {
-                				static: true,
-                				center: true
-                			});
-                		});
-                    </script>
-				<!--     <a class="dg-widget-link" href="http://2gis.kg/bishkek/firm/70000001051597883/center/74.578238,42.878688/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть на карте Бишкека</a>
-				<div class="dg-widget-link"><a href="http://2gis.kg/bishkek/center/74.578238,42.878688/zoom/16/routeTab/rsType/bus/to/74.578238,42.878688╎РЕЛЕВАНС, аудиторско-консалтинговая компания?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route">Найти проезд до РЕЛЕВАНС, аудиторско-консалтинговая компания</a></div>
-				<script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script>
-				<script charset="utf-8">
-				    new DGWidgetLoader({
-				        "width": 640,
-				        "height": 500,
-				        "scrollWheelZoom": true,
-				        "zoomControl": true,
-				        "borderColor": "#a3a3a3",
-				        "pos": {
-				            "lat": 42.878688,
-				            "lon": 74.578238,
-				            "zoom": 16
-				        },
-				        "opt": {
-				            "city": "bishkek"
-				        },
-				        "org": [{
-				            "id": "70000001051597883"
-				        }]
-				    });
-				</script><noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript> -->
+				    <script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script>
+				    <script charset="utf-8">
+				        new DGWidgetLoader({
+				            "width": "100%",
+				            "height": 500,
+				            "scrollWheelZoom": false,
+				            "zoomControl": true,
+				            "borderColor": "#a3a3a3",
+				            "pos": { "lat": 42.878688, "lon": 74.578238, "zoom": 16 },
+				            "opt": { "city": "bishkek" },
+				            "org": [{ "id": "70000001051597883" }]
+				        });
+				    </script>
 				</div>
 			</div>
 		</div>

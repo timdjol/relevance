@@ -24,7 +24,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-6">
 				<a href="<?php echo get_home_url(); ?>/category/baza/">
 				    <div class="homeblog-item" data-aos="zoom-in" data-aos-duration="2000">
     					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/blog1.svg" alt="">
@@ -35,7 +35,7 @@
     				</div>
 				</a>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-6">
 				<a href="<?php echo get_home_url(); ?>/forum-buhgalterov/">
 				    <div class="homeblog-item" data-aos="zoom-in" data-aos-duration="2000">
     					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/blog2.svg" alt="">
@@ -45,15 +45,6 @@
     					</div>
     				</div>
 				</a>
-			</div>
-			<div class="col-md-4">
-				<div class="homeblog-item" data-aos="zoom-in" data-aos-duration="2000">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/blog3.svg" alt="">
-					<h3>Вопросы & ответы</h3>
-					<div class="btn-wrap">
-					    <a href="#" class="more">Подробнее</a>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>

@@ -51,7 +51,7 @@ get_header(); ?>
 					            echo '<li><a href="tel:'.$phone2.'">'.$phone2.' <img src="'.get_stylesheet_directory_uri().'/img/phone.svg" alt=""></a></a></li>';
 					        }
 					        if($phone3){
-					            echo '<li><a href="tel:'.$phone3.'">'.$phone1.' <img src="'.get_stylesheet_directory_uri().'/img/phone.svg" alt=""></a></a></li>';
+					            echo '<li><a href="tel:'.$phone3.'">'.$phone3.' <img src="'.get_stylesheet_directory_uri().'/img/phone.svg" alt=""></a></a></li>';
 					        }
 					   ?>
 					</ul>
@@ -90,7 +90,7 @@ get_header(); ?>
 						<select name="time" id="">
 							<option value="09.00 - 10.00">09.00 - 10.00</option>
 							<option value="10.00 - 11.00">10.00 - 11.00</option>
-							<option value="11.00 - 11.00">11.00 - 12.00</option>
+							<option value="11.00 - 12.00">11.00 - 12.00</option>
 							<option value="12.00 - 13.00">12.00 - 13.00</option>
 							<option value="13.00 - 14.00">13.00 - 14.00</option>
 							<option value="14.00 - 15.00">14.00 - 15.00</option>
@@ -111,23 +111,19 @@ get_header(); ?>
 </div>
 
 <div class="map contacts-map">
-				    <script src="https://maps.api.2gis.ru/2.0/loader.js"></script>
-				    <div id="map" style="width: 100%; height: 400px;"></div>
-                    <script>
-                        DG.then(function() {
-                			var map = DG.map('map', {
-                				center: [42.878688, 74.578238],
-                				zoom: 16
-                			});
-                
-                			DG.marker([42.878688, 74.578238],{scrollWheelZoom: false})
-                			.addTo(map)
-                			.bindLabel('RELEVANCE Consulting company', {
-                				static: true,
-                				center: true
-                			});
-                		});
-                    </script>
+				    <script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script>
+				    <script charset="utf-8">
+				        new DGWidgetLoader({
+				            "width": "100%",
+				            "height": 400,
+				            "scrollWheelZoom": false,
+				            "zoomControl": true,
+				            "borderColor": "#a3a3a3",
+				            "pos": { "lat": 42.878688, "lon": 74.578238, "zoom": 16 },
+				            "opt": { "city": "bishkek" },
+				            "org": [{ "id": "70000001051597883" }]
+				        });
+				    </script>
 				</div>
 				
 

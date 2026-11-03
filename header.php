@@ -4,7 +4,6 @@
 <head>
 	<meta charset="utf-8">
 	<!-- <base href="/"> -->
-	<title><?php bloginfo('name'); ?>|<?php wp_title("", true); ?></title>
 	<meta name="description" content="<?php bloginfo('description'); ?>">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -50,8 +49,6 @@
 						</div>
 						<ul class="lang">
 						    <li class="current"><a href="<?php echo get_home_url(); ?>">РУС</a></li>
-						    <li><a href="#">Eng</a></li>
-						    <li><a href="#">Кыр</a></li>
 						</ul>
 					</div>
 				</div>
@@ -110,8 +107,6 @@
 								</ul>
 								<ul class="lang">
 									<li class="current"><a href="<?php echo get_home_url(); ?>">РУС</a></li>
-									<li><a href="#">Eng</a></li>
-									<li><a href="#">Кыр</a></li>
 								</ul>
 							</ul>
 						</nav>
